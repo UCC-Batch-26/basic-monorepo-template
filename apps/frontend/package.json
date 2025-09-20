@@ -1,22 +1,21 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "lint:fix": "eslint . --fix",
-    "prettier": "npx prettier --check './**/*.{js,jsx,mjs,cjs,json}'",
-    "prettier:fix": "npx prettier --write './**/*.{js,jsx,mjs,cjs,json}'",
-    "fix": "npm run lint:fix && npm run prettier:fix"
+    "fix": "eslint . --fix"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.9.1"
+    "react-router": "^7.9.1",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

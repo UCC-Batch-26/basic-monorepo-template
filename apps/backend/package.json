@@ -5,7 +5,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node --inspect --watch index.js"
+    "dev": "cross-env DEBUG=backend:* NODE_ENV=development node --env-file-if-exists=.env --watch index.js",
+    "inspect": "cross-env DEBUG=backend:* NODE_ENV=development node --env-file-if-exists=.env --watch --inspect index.js",
+    "start": "npm run dev",
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -26,9 +30,10 @@
     "debug": "^4.4.3",
     "eslint": "^9.35.0",
     "eslint-plugin-sonarjs": "^3.0.5",
+    "globals": "^16.4.0",
     "prettier": "^3.6.2"
   },
   "imports": {
-    "#/*": "./modules/*"
+    "#modules/*": "./modules/*"
   }
 }
