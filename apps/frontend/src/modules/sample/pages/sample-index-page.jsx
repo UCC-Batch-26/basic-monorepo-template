@@ -5,7 +5,7 @@ export function SampleIndexPage() {
   return (
     <div className="grid gap-4">
       <header className="flex items-center justify-between">
-        <h1 className="text-lead text-3xl">All Samples</h1>
+        <h1 className="text-lead text-4xl">All Samples</h1>
         <Link to="/sample/add" className="underline">
           Add Sample
         </Link>
