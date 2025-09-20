@@ -1,5 +1,5 @@
-import { log } from '#utils/log.js';
 import { Sample } from '#modules/samples/models/sample.js';
+import { log } from '#utils/log.js';
 
 export async function getSample(req, res) {
   const { id } = req.params;

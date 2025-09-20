@@ -1,4 +1,5 @@
-import { Sample } from '../models/sample.js';
+import { Sample } from '#modules/samples/models/sample.js';
+import { log } from '#utils/log.js';
 
 export async function addSample(req, res) {
   try {
@@ -10,7 +11,7 @@ export async function addSample(req, res) {
       data: sample,
     });
   } catch (error) {
-    console.log('Error creating sample:', error);
+    log('addSample', 'Error creating sample:', error);
 
     res.status(400).json({
       message: error?.message ?? 'Something went wrong creating sample',

@@ -1,10 +1,10 @@
-import express from 'express';
-import process from 'node:process';
+import sampleRoutes from '#modules/samples/routes.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import sampleRoutes from '#modules/samples/routes.js';
+import process from 'node:process';
 import { db } from './db.js';
 
 const app = express();
@@ -15,6 +15,8 @@ app.set('port', PORT);
 app.use(
   cors({
     origin: (origin, callback) => {
+      // eslint-disable-next-line
+      // @todo: Add your whitelisted URL here
       const whitelist = ['http://localhost:5173', 'https://yourproductionurl.com'];
       if (whitelist.indexOf(origin) === -1) {
         callback(new Error(`Not allowed by CORS: ${origin}`));
