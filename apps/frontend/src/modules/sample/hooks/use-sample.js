@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useReducer } from 'react';
 
 const STATE_STATUS = {
@@ -107,9 +108,9 @@ export function useSample() {
   }
 
   return {
-    addSample,
-    allSamples,
-    viewSample,
+    addSample: useCallback(addSample, []),
+    allSamples: useCallback(allSamples, []),
+    viewSample: useCallback(viewSample, []),
     isPending: state.status === STATE_STATUS.PENDING,
     isSuccess: state.status === STATE_STATUS.SUCCESS,
     isFailed: state.status === STATE_STATUS.FAILED,

@@ -14,7 +14,7 @@ export function SampleViewPage() {
     }
 
     fetchSample(id);
-  }, [id]);
+  }, [id, viewSample]);
 
   if (isFailed) {
     return <>Failed to retrieve Sample</>;

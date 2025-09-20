@@ -25,7 +25,7 @@ export function SampleList() {
     }
 
     fetchAllSamples();
-  }, []);
+  }, [allSamples]);
 
   if (isPending) {
     return <SampleListSkeleton />;
