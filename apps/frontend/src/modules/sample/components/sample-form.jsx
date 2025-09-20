@@ -1,8 +1,6 @@
-import { useSample } from '@/modules/sample/hooks/use-sample';
-import { useRef } from 'react';
 import { Button } from '@/modules/common/components/button';
-import { useEffect } from 'react';
-import { Link } from 'react-router';
+import { useSample } from '@/modules/sample/hooks/use-sample';
+import { useEffect, useRef } from 'react';
 
 function SuccessAlert() {
   return (

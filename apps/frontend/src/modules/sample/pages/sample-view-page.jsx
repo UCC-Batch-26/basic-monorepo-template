@@ -1,7 +1,7 @@
+import { SampleView, SampleViewSkeleton } from '@/modules/sample/components/sample-view';
 import { useSample } from '@/modules/sample/hooks/use-sample';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router';
-import { SampleView, SampleViewSkeleton } from '@/modules/sample/components/sample-view';
 
 export function SampleViewPage() {
   const { id } = useParams();

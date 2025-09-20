@@ -1,5 +1,4 @@
-import { useCallback } from 'react';
-import { useReducer } from 'react';
+import { useCallback, useReducer } from 'react';
 
 const STATE_STATUS = {
   IDLE: 'idle',

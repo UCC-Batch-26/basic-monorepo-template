@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router';
 import { HomePage } from '@/modules/home/pages/home-page';
 import { SampleLayout } from '@/modules/sample/layouts/sample-layout';
-import { SampleIndexPage } from '@/modules/sample/pages/sample-index-page';
 import { SampleAddPage } from '@/modules/sample/pages/sample-add-page';
-import { SampleViewPage } from './modules/sample/pages/sample-view-page';
+import { SampleIndexPage } from '@/modules/sample/pages/sample-index-page';
+import { SampleViewPage } from '@/modules/sample/pages/sample-view-page';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 
 const router = createBrowserRouter([
   {

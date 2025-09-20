@@ -1,8 +1,7 @@
+import { useSample } from '@/modules/sample/hooks/use-sample';
 import { useEffect } from 'react';
-import { useSample } from '../hooks/use-sample';
-import { SampleListItem, SampleListItemSkeleton } from './sample-list-item';
 import { Link } from 'react-router';
-import { Button } from '../../common/components/button';
+import { SampleListItem, SampleListItemSkeleton } from './sample-list-item';
 
 function SampleListSkeleton() {
   return (
