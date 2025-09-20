@@ -14,7 +14,7 @@ git fetch
 
 > This command updates your local view of the remote branches without merging any changes into your local branches
 
-## Main Branches
+## Main Branch
 
 - **main** - This is the primary branch of the repository representing the source of truth for production-ready code. All development code is eventually merged into this branch after thorough testing and review.
 
@@ -22,14 +22,46 @@ git fetch
 
 To support our development workflow, we use the following types of branches:
 
-- **Feature Branches (`feat/*`)** - Branch off from `main` and merge back into `main`. Each feature branch is dedicated to the development of a specific feature or enhancement. Name these branches in a way that reflects the feature being developed (e.g., `feature/add-login`).
-- **Bugfix Branches (`bugfix/*`)** - Branch off from `main` and merge back into `main`. Use these branches for fixing bugs in the development version of the project. Prefix branch names with `bugfix/` followed by a brief description of the fix (e.g., `bugfix/login-error`).
+- **Feature Branches (`feat/*`)**
+  - Created from `main`.
+  - Used for small, focused features or tasks.
+  - Deleted after being merged into `main`.
+  - Example: `feat/add-login`.
+- **Hotfix Branches (`fix/*`)**
+  - Created from `main` when fixing critical production bugs.
+  - Merged back into `main` after verification.
+- All branches MUST be in **lowercase** to avoid conflict.
 
-## How to Do It
+## Starting a New Task
 
-1. When you're ready to start, you'll make a new branch from `develop` if you're adding a feature or fixing something that's not urgent. If something big is broken in the `main` branch, you might need to make a hotfix branch directly from `main`
-2. As you write your code, you keep it on your branch. You can make changes and try things out without affecting anyone else.
-3. When you're done, you'll ask the team to look at your code with something called a "Pull Request". The team will look at your code, maybe suggest some changes, and then your code gets added to the project once everything looks good.
+1. Make sure you're on the latest `main` branch.
+
+```sh
+git checkout main
+git pull
+```
+
+2. Create a new feature branch.
+
+```sh
+git checkout -b feat/your-task-name
+```
+
+3. Make small, meaningful commits regularly.
+
+## Opening a Pull Request
+
+1. Push your feature branch
+
+```sh
+git push -u origin $(git branch --show-current)
+```
+
+2. Open a pull request (PR) targeting to `main`
+3. Requirements before merging:
+
+- Code reviewed by a teammate
+- All CI checks must pass
 
 ## Tips for Success
 
