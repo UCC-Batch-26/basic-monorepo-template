@@ -33,7 +33,7 @@ To ensure our code is consistent and well-formatted
 Linting helps identify and fix errors or warnings in the code. To run the linting process and automatically apply fixes, run:
 
 ```sh
-pnpm run lint
+pnpm lint
 ```
 
 ### Code Formatting
@@ -41,7 +41,7 @@ pnpm run lint
 Prettier is used to automatically format the code. To format your code, run:
 
 ```sh
-pnpm run format
+pnpm fix
 ```
 
 ## 🚀 Congrats
