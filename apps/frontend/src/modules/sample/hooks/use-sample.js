@@ -90,9 +90,26 @@ export function useSample() {
     }
   }
 
+  async function viewSample(id) {
+    dispatch({ type: ACTION_TYPE.PENDING });
+    try {
+      const response = await fetch(`${SAMPLE_URL}/${id}`);
+
+      if (!response.ok) {
+        throw new Error(`Failed to request: ${response.status}`);
+      }
+
+      dispatch({ type: ACTION_TYPE.SUCCESS, payload: await response.json() });
+    } catch (error) {
+      console.log('Failed Getting Sample Request:', error);
+      dispatch({ type: ACTION_TYPE.FAILED, payload: error?.message ?? 'Something went wrong' });
+    }
+  }
+
   return {
     addSample,
     allSamples,
+    viewSample,
     isPending: state.status === STATE_STATUS.PENDING,
     isSuccess: state.status === STATE_STATUS.SUCCESS,
     isFailed: state.status === STATE_STATUS.FAILED,

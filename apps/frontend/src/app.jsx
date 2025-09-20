@@ -3,6 +3,7 @@ import { HomePage } from '@/modules/home/pages/home-page';
 import { SampleLayout } from '@/modules/sample/layouts/sample-layout';
 import { SampleIndexPage } from '@/modules/sample/pages/sample-index-page';
 import { SampleAddPage } from '@/modules/sample/pages/sample-add-page';
+import { SampleViewPage } from './modules/sample/pages/sample-view-page';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         path: '',
         index: true,
         element: <SampleIndexPage />,
+      },
+      {
+        path: ':id',
+        element: <SampleViewPage />,
       },
       {
         path: 'add',

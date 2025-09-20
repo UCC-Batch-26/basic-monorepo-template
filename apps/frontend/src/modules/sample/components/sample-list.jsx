@@ -24,7 +24,7 @@ export function SampleList() {
       allSamples();
     }
 
-    fetchAllSamples()
+    fetchAllSamples();
   }, []);
 
   if (isPending) {
@@ -59,7 +59,7 @@ export function SampleList() {
   return (
     <>
       {data.map((item) => (
-        <SampleListItem name={item.name} />
+        <SampleListItem name={item.name} id={item._id} key={item._id} />
       ))}
     </>
   );
