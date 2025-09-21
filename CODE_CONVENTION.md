@@ -9,22 +9,26 @@ To ensure clarity and organization, the following folder structure should be use
 ```
 project/
 │
-├── apps/                         # All Source code
-│   ├── backend/                  # All Backend (Express)
-│   │   ├── modules/              # All modules
-│   │   │   ├── samples/          # Sample feature
-│   │   │   │   ├── controllers/  # All controllers (Sample)
-│   │   │   │   ├── models/       # All models (Sample)
-│   │   │   │   ├── routes.js     # Sample related routes
-│   │   ├── utils/                # All utility functions
+├── apps/                             # All Source code
+│   ├── backend/                      # All Backend (Express)
+│   │   ├── src/                      # All source codes
+│   │   │   ├── modules/              # All modules
+│   │   │   │   ├── samples/          # Sample feature
+│   │   │   │   │   ├── controllers/  # All controllers (Sample)
+│   │   │   │   │   ├── models/       # All models (Sample)
+│   │   │   │   │   ├── routes.js     # Sample related routes
+│   │   │   ├── utils/                # All utility functions
+│   │   │   ├── app.js                # Express App
+│   │   │   ├── db.js                 # Database function
+│   │   ├── test/                     # All test setup files
 │   │
-│   ├── frontend/                 # All Frontend (React)
-│   │   ├── public/               # Publicly available files
-│   │   ├── src/                  # All source
-│   │   │   ├── modules/          # All modules
-│   │   │   │   ├── common/       # Commonly use module
-│   │   │   │   ├── home/         # Home feature
-│   │   │   │   ├── sample/       # Sample feature
+│   ├── frontend/                    # All Frontend (React)
+│   │   ├── public/                  # Publicly available files
+│   │   ├── src/                     # All source codes
+│   │   │   ├── modules/             # All modules
+│   │   │   │   ├── common/          # Commonly use module
+│   │   │   │   ├── home/            # Home feature
+│   │   │   │   ├── sample/           # Sample feature
 │
 ├── package.json                  # Project metadata
 ```
