@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll } from 'jest';
+import { afterAll, afterEach, beforeAll } from 'vitest';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 

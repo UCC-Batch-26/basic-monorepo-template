@@ -6,14 +6,14 @@ export async function addSample(req, res) {
     const { name } = req.body;
     const sample = await Sample.create({ name });
 
-    res.status(201).json({
+    return res.status(201).json({
       message: 'Successfully created sample',
       data: sample,
     });
   } catch (error) {
     log('addSample', 'Error creating sample:', error);
 
-    res.status(400).json({
+    return res.status(400).json({
       message: error?.message ?? 'Something went wrong creating sample',
     });
   }
