@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "env": "cp .env.example .env"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",

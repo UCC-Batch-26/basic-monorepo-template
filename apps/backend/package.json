@@ -10,7 +10,8 @@
     "start": "npm run dev",
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "env": "cp .env.example .env"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

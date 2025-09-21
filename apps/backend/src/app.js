@@ -1,3 +1,4 @@
+import { errorHandler } from '#modules/common/middleware/error-handler.js';
 import sampleRoutes from '#modules/samples/routes.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 app.set('port', PORT);
 
+// All Global middleware
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -30,6 +32,7 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(morgan('combined'));
 
+// Database connection
 await db(process.env.DB_URI);
 
 app.get('/ping', (req, res) => {
@@ -38,6 +41,10 @@ app.get('/ping', (req, res) => {
   });
 });
 
+// Sample route
 app.use('/sample', sampleRoutes);
+
+// Error handling middleware, MUST always be the last
+app.use(errorHandler);
 
 export default app;
