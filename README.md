@@ -16,6 +16,22 @@ Install dependencies by running this on the root directory. Meaning, no need to 
 pnpm install
 ```
 
+## 🌏 Environment
+
+To configure environment varialbes for your project, follow these steps:
+
+### 1️⃣ Run this command
+
+```sh
+pnpm env
+```
+
+This will create a copy of `.env.example` to `.env` to its respective apps.
+
+### 2️⃣ Update the `.env` file
+
+Open the `.env` file and update the values based on the your project's preferences
+
 ## 👟 Run the App
 
 With the dependencies installed, you're now ready to run the application.
@@ -26,7 +42,7 @@ pnpm dev
 
 ## 🏋️‍♀️ Code Consistency
 
-To ensure our code is consistent and well-formatted
+To ensure our code is consistent and well-formatted.
 
 ### Linting
 
@@ -36,9 +52,9 @@ Linting helps identify and fix errors or warnings in the code. To run the lintin
 pnpm lint
 ```
 
-### Code Formatting
+### Auto-magically Fix
 
-Prettier is used to automatically format the code. To format your code, run:
+To automatically format your code and apply fixable linting rules, run:
 
 ```sh
 pnpm fix
