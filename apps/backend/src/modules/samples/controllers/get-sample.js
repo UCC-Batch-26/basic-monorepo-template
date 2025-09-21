@@ -11,7 +11,13 @@ export async function getSample(req, res) {
   } catch (error) {
     log('getSample', 'Unable to retrieve Sample:', error);
 
-    return res.status(400).json({
+    let statusCode = 400;
+
+    if (error.name === 'DocumentNotFoundError') {
+      statusCode = 404;
+    }
+
+    return res.status(statusCode).json({
       error: error?.message ?? 'Unable to retrieve Sample',
     });
   }
