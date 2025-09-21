@@ -2,7 +2,7 @@
 
 This document outlines the coding conventions for structuring our application. The goal is to maintain consistency, scalability, and easy of collaboration among team members. By adhering to theses conventions, we ensure that the codebase remains modular, maintainable, and easy to navigate as the project grows.
 
-## Folder Structure
+## Folder & Files Structure
 
 To ensure clarity and organization, the following folder structure should be used:
 
@@ -13,14 +13,17 @@ project/
 │   ├── backend/                      # All Backend (Express)
 │   │   ├── src/                      # All source codes
 │   │   │   ├── modules/              # All modules
+│   │   │   │   ├── common/           # All common modules
+│   │   │   │   │   ├── middleware/   # All common middleware
 │   │   │   │   ├── samples/          # Sample feature
 │   │   │   │   │   ├── controllers/  # All controllers (Sample)
 │   │   │   │   │   ├── models/       # All models (Sample)
-│   │   │   │   │   ├── routes.js     # Sample related routes
+│   │   │   │   │   ├── tests/        # All tests (Sample)
+│   │   │   │   │   ├── routes.js     # All routes (Sample)
 │   │   │   ├── utils/                # All utility functions
 │   │   │   ├── app.js                # Express App
 │   │   │   ├── db.js                 # Database function
-│   │   ├── test/                     # All test setup files
+│   │   ├── tests/                    # All test setup files
 │   │
 │   ├── frontend/                    # All Frontend (React)
 │   │   ├── public/                  # Publicly available files
@@ -36,7 +39,7 @@ project/
 ## General Convention
 
 - All file names should be in lowercase. This avoids issues with case sensitivity on different operating systems.
-  - Example: `my-component.jsx`
+  - Example: `my-component.jsx`, `get-all-something.js`
 - Use hyphens (`-`) to separate words.
 - Avoid spaces, underscores (`_`) and camelCase.
 - Be descriptive but concise.
@@ -140,7 +143,7 @@ import { NestedComponent } from './components';
 ## Export Convention
 
 - Use **named exports** for mostly everything
-  - Except router for `backend`
+  - Except router and express app for the `backend`
 
 ❌ Using export default
 
@@ -188,8 +191,10 @@ import { useState } from 'react';
 - **Avoid obvious comments** (the code should explain itself).
 - Use comments only when explaining **why**, not what.
 - Use `@todo:` and `@fixme:` with your name and date if leaving technical debt
+  - Add `// eslint-disable-next-line` on top so sonar will not make it a big deal
 
 ```js
+// eslint-disable-next-line
 // @todo: (jag) refactor this once we have the new API (2025-09-22)
 ```
 
@@ -231,7 +236,7 @@ const hasPermission = false;
 ## Constants and Enum
 
 - Extract magic strings/numbers to constants.
-- Use enums for fixed sets of values
+- Use enums object for fixed sets of values
 
 ❌ Bad
 
@@ -244,6 +249,7 @@ const role = 'user';
 
 ```js
 const USER_URL = '/api/users';
+// Use Enum Object
 const ROLE_TYPE = {
   ADMIN: 'admin',
   USER: 'user',
@@ -262,6 +268,11 @@ const role = ROLE_TYPE.USER;
 
 - Use descriptive names based on the functionality.
 - Always use named exports for middleware functions
+
+## Validation Middleware
+
+- Use middleware for validating request bodies, query parameters, or headers.
+- You can add libraries to help you.
 
 Example:
 
@@ -282,8 +293,3 @@ export function sample(req, res, next) {
 - Always handle errors in controllers and middleware if necessary.
 - Provide meaningful error messages in the response to help diagnose issues.
 - Use a proper status for each response.
-
-## Validation Middleware
-
-- Use middleware for validating request bodies, query parameters, or headers.
-- You can add libraries to help you.
