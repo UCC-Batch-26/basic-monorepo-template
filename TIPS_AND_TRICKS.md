@@ -4,7 +4,7 @@ This document contains helpful tips and tricks for working with this monorepo te
 
 ## General Monorepo Tips
 
-### 1. Package Management
+### Package Management
 
 - Always use `pnpm` commands from the root directory
 - Install shared dependencies at the root level
@@ -20,7 +20,7 @@ pnpm -F frontend add redux
 pnpm -F backend add jsonwebtoken
 ```
 
-### 2. Workspace Navigation
+### Workspace Navigation
 
 - Use the `pnpm -F` command to run scripts in specific packages
 - Navigate between workspaces efficiently using the workspace commands
@@ -38,26 +38,26 @@ pnpm -F backend dev
 pnpm -F frontend test
 ```
 
-### 3. Development Workflow
+### Development Workflow
 
 - Always run `pnpm install` after pulling new changes
 - Check the turborepo cache status to optimize build times
 
 ## Frontend-specific Tips
 
-### 1. Component Development
+### Component Development
 
 - Place shared components in `apps/frontend/src/modules/common/components`
 - Keep page-specific components within their respective module folders
 - Use the established folder structure to maintain consistency
 
-### 2. State Management
+### State Management
 
 - Utilize custom hooks in the `hooks` directory of each module
 - Keep API calls and business logic in hooks
 - Follow the established patterns in `use-sample.js` and `use-ping.js`
 
-### 3. Routing
+### Routing
 
 - Add new routes in a modular fashion
 - Follow the existing pattern of using layout components when needed
@@ -65,19 +65,20 @@ pnpm -F frontend test
 
 ## Backend-specific Tips
 
-### 1. API Development
+### API Development
 
-- Follow the modular structure in `apps/backend/modules`
+- Follow the modular structure in `apps/backend/src/modules`
 - Keep routes, controllers, and models organized by feature
 - Use the established patterns in the samples module as reference
+- Import modules using alias `#modules/<module-name>/path/to/file.js`
 
-### 2. Error Handling
+### Error Handling
 
 - Utilize the common error handling middleware
 - Follow the established error response format
-- Use the logging utility from `utils/log.js`
+- Use the logging utility from `#utils/log.js`
 
-### 3. Database Operations
+### Database Operations
 
 - Keep database operations within model files
 - Follow the patterns established in `models/sample.js`
@@ -88,18 +89,21 @@ pnpm -F frontend test
 ### 1. ESLint and Formatting
 
 - Run `pnpm lint` before committing changes
-- Fix lint errors using `pnpm lint:fix`
+- Fix lint errors using `pnpm fix`
+  - This will fix the formatting as well
 - Follow the code style defined in eslint configs
 
 ### 2. Testing
 
 - Write tests for new features
-- Run tests before creating pull requests
+- Run tests before creating pull requests (as much as possible)
 - Use the testing utilities provided in the template
+  - Add `.test` right before the filename extension (e.g. `add-sample.test.js`)
+  - Add inside `tests/` folder or right beside the component
 
 ### 3. Git Workflow
 
-- Follow the branching strategy defined in BRANCHING_STRATEGY.md
+- Follow the branching strategy defined in `BRANCHING_STRATEGY.md`
 - Keep commits focused and well-described
 - Reference issue numbers in commit messages when applicable
 
@@ -132,8 +136,8 @@ pnpm dlx turbo clean
 
 ### 2. Port Conflicts
 
-- Frontend default port: 5173
-- Backend default port: 3000
+- Frontend default port: **5173**
+- Backend default port: **3000**
 - Modify in respective configuration files if needed
 
 ### 3. Build Issues
@@ -148,7 +152,9 @@ pnpm build
 
 ## Additional Resources
 
+- [Express Documentation](https://expressjs.com/)
+- [React Documentation](https://react.dev)
+- [React Router Documentation](https://reactrouter.com)
 - [pnpm Workspaces Documentation](https://pnpm.io/workspaces)
 - [Turborepo Documentation](https://turborepo.org/docs)
 - [Vite Documentation](https://vitejs.dev/)
-- [Express.js Documentation](https://expressjs.com/)
