@@ -8,7 +8,8 @@
     "format": "prettier --write \"**/*.{js,jsx,md}\"",
     "fix": "pnpm lint && pnpm format",
     "check-types": "turbo run check-types",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "environment": "turbo run environment"
   },
   "devDependencies": {
     "prettier": "^3.6.2",

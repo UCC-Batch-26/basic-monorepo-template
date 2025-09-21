@@ -23,7 +23,7 @@ To configure environment varialbes for your project, follow these steps:
 ### 1️⃣ Run this command
 
 ```sh
-pnpm env
+pnpm environment
 ```
 
 This will create a copy of `.env.example` to `.env` to its respective apps.
