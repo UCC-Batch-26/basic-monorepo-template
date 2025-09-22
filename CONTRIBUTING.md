@@ -7,7 +7,7 @@ We welcome contributions to this project! Please follow the guidelines below to 
 Create a new branch to work on your changes. It is a good practice to name the branch according to the feature or bug fix you're working on
 
 ```sh
-git checkout -b feature/short-description
+git checkout -b feat/short-description
 ```
 
 > NOTE: To avoid conflict, use only lower-case characters
